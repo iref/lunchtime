@@ -10,8 +10,11 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :lunchtime, LunchtimeWeb.Endpoint,
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  url: [scheme: "https", host: "calm-tundra-41433", port: 443],
+  force_ssl: [rewrite_on: [:x_forwarded_proto]],
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  http: [:inet6, port: String.to_integer(System.get_env("PORT") || "4000")],
+  secret_key_base: System.get_env("SECRET_KEY_BASE") 
 
 # Do not print debug messages in production
 config :logger, level: :info
@@ -59,7 +62,3 @@ config :logger, level: :info
 #
 # Then you can assemble a release by calling `mix release`.
 # See `mix help release` for more information.
-
-# Finally import the config/prod.secret.exs which loads secrets
-# and configuration from environment variables.
-import_config "prod.secret.exs"
