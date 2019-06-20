@@ -1,12 +1,12 @@
 defmodule LunchtimeWeb.MenusView do
   use LunchtimeWeb, :view
 
-  def render("menus.text", %{menus: menus}) do
-    IO.inspect(menus.daily_menus)
-
-    menus.daily_menus
-    |> Enum.map(&render_menu/1)
-    |> Enum.join("\n")
+  def render("menus.json", %{menus: menus}) do
+    text =
+      menus
+      |> Enum.map(&render_menu/1)
+      |> Enum.join("\n")
+    %{text: "```#{text}```"}
   end
 
   defp render_menu(%Lunchtime.Zomato.DailyMenu{name: name, dishes: dishes}) do
