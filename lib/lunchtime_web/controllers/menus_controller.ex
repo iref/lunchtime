@@ -1,12 +1,11 @@
 defmodule LunchtimeWeb.MenusController do
   use LunchtimeWeb, :controller
 
-  def menus(conn, _params) do
-    # TODO handle errors in fallback error controller 
-    menus = Lunchtime.get_lunch_menu("16507624")
-
+  def menus(conn, params) do
+    IO.inspect(params)
+    restaurants = Lunchtime.get_restaurants()
     conn
     |> put_status(:ok)
-    |> render("menus.json", menus: menus)
+    |> render("restaurants.json", restaurants: restaurants)
   end
 end
