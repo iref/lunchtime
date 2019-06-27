@@ -2,10 +2,10 @@ defmodule LunchtimeWeb.MenusView do
   use LunchtimeWeb, :view
 
   def render("restaurants.json", %{restaurants: restaurants}) do
-    restaurants
-    |> Enum.map(&render_restaurant/1)
-    |> Enum.join()
-    |> slack_response()
+    text = restaurants
+      |> Enum.map(&render_restaurant/1)
+      |> Enum.join()
+    slack_response("Use /lunchtime alias to see restaurant's lunch menu\n\n#{text}")
   end
   def render("menus.json", %{menus: menus}) do
     menus
