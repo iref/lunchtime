@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Suzie's",
+    "provider": "zomato",
+    "provider_id": "16506939",
+    "alias": "suzies"
+  },
+  {
+    "name": "Nase Vase Bistro",
+    "provider": "zomato",
+    "provider_id": "18456170",
+    "alias": "nase"
+  },
+  {
+    "name": "Stavba",
+    "provider": "zomato",
+    "provider_id": "17809289",
+    "alias": "stavba"
+  },
+  {
+    "name": "Everest",
+    "provider": "zomato",
+    "provider_id": "16506537",
+    "alias": "everest"
+  }
+]

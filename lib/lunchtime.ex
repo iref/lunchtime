@@ -9,6 +9,8 @@ defmodule Lunchtime do
   alias Lunchtime.Zomato
   alias Lunchtime.Zomato.DailyMenu
 
+  def get_restaurants(), do: Lunchtime.Restaurants.get_restaurants()
+
   def get_lunch_menu(restaurant_id) do
     # TODO implement error handling
     restaurant_id

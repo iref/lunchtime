@@ -9,9 +9,10 @@ defmodule Lunchtime.Application do
     # List all child processes to be supervised
     children = [
       # Start the endpoint when the application starts
-      LunchtimeWeb.Endpoint
+      LunchtimeWeb.Endpoint,
       # Starts a worker by calling: Lunchtime.Worker.start_link(arg)
       # {Lunchtime.Worker, arg},
+      Lunchtime.Restaurants
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
